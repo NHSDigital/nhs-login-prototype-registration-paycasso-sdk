@@ -1,7 +1,7 @@
 {% extends 'layouts/layout.html' %}
 
 {% block pageTitle %}
-There was a technical problem
+There was a problem
 {% endblock %}
 
 {% block content %}
@@ -9,11 +9,12 @@ There was a technical problem
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds nhsuk-u-margin-bottom-8">
 
-    <h1 class="nhsuk-heading-l">There is a problem</h1>
+    <h1 class="nhsuk-heading-l">There was a problem</h1>
 
-    <p>There has been a technical issue on our side.</p>
-    
-    <p>Select <b>Continue</b> to try again..</p>
+    <p>You need to update your version of the Google Play services app on your phone.
+    </p>
+
+    <p>When you have updated your Google Play services app, you can select <b>Continue</b> to try again.</p>
 
     <form method="POST" action="/registration/service-access-photo-id-type">
       <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Continue</button>
