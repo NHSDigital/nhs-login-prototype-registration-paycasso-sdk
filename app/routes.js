@@ -48,7 +48,12 @@ router.post('/registration/nhs-number-checking', function (req, res) {
 })
 
 
+// Error message route here
 
+router.get('/registration/sdk-errors/error-doc-capture-reroute', (req, res) => {
+  var errormessage = req.param('errormessage')
+  res.render('registration/sdk-errors/error-doc-capture-reroute', {errormessage: errormessage},function(err,html){res.send(html)})
+})
 
 
 // user-profile.html routing
@@ -68,8 +73,6 @@ router.post('/registration/p5-p9-uplift/user-profile-choice', function (req, res
     res.redirect('error-p5-p9-uplift-hc-incorrect-details')
   }
 })
-
-
 
 
 // Clear all session data

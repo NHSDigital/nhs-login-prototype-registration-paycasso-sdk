@@ -1,0 +1,57 @@
+{% extends 'layouts/layout.html' %}
+
+{% block pageTitle %}
+We did not receive the picture in time
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-u-margin-bottom-6">
+
+        <h1 class="nhsuk-heading-l">
+          There is a problem
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      {% if errormessage === 'capture-timeout' %}
+     
+      <p>You took longer than 10 minutes to take a photo.</p>
+      
+      {% elif errormessage === 'technical-error' %}
+      <p>There has been a technical issue on our side.</p>
+
+      {% elif errormessage === 'google-play-service' %}
+      <p>You need to update your version of the Google Play services app on your phone.</p>
+
+      {% elif errormessage === 'no-internet' %}
+      <p>You lost your connection to the internet.</p>
+
+      {% elif errormessage === 'timeout' %}
+      <p>You took longer than 20 minutes to provide evidence of your I.D.</p>
+
+      {% endif %}
+
+      <p>If you are having trouble capturing your I.D. you can try taking a photo on your device and uploading it instead.
+
+      <p>Select <b>Upload a photo</b> to continue.</p>
+
+      <form method="POST" action="/registration/service-access-photo-id-type">
+      <button type="submit" class="nhsuk-button nhsuk-u-margin-bottom-0">Upload a photo</button>
+
+      <div class="or">
+      <span>Or</span>
+    </div>
+
+    <p><a href="/registration/patient-online-details">Prove who you are without sending a photo of your I.D.</a></p>
+    
+    </div>
+  </div>
+
+{% endblock %}
